@@ -1,0 +1,20 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="112" y1="112" x2="912" y2="912" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E3A8A"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#0B2A61" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect x="64" y="64" width="896" height="896" rx="224" fill="url(#bg)"/>
+  <circle cx="512" cy="512" r="360" fill="#FFFFFF" fill-opacity="0.08"/>
+
+  <g filter="url(#shadow)">
+    <path d="M492 778C369 685 294 605 294 499C294 413 356 351 434 351C480 351 520 369 547 404C573 369 614 351 660 351C738 351 800 413 800 499C800 605 725 685 602 778L547 809L492 778Z" fill="#F8FBFF"/>
+    <path d="M348 573H410L453 527L496 628L539 555L581 573H636" stroke="#1D4ED8" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M492 486C517 486 538 465 538 440C538 415 517 394 492 394C467 394 446 415 446 440C446 465 467 486 492 486Z" fill="#BFDBFE"/>
+  </g>
+</svg>

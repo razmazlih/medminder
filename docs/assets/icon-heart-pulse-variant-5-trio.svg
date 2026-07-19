@@ -1,0 +1,67 @@
+<svg width="1600" height="620" viewBox="0 0 1600 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgMinimal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D84A71"/>
+      <stop offset="100%" stop-color="#FF8FA2"/>
+    </linearGradient>
+    <linearGradient id="bgPremium" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7A1637"/>
+      <stop offset="100%" stop-color="#D84A71"/>
+    </linearGradient>
+    <linearGradient id="bgClinical" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B92D58"/>
+      <stop offset="100%" stop-color="#FF7F96"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#6D1732" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill: #1F2937; }
+      .label { font: 700 22px Arial, sans-serif; fill: #1F2937; }
+      .note { font: 400 18px Arial, sans-serif; fill: #5B6B7A; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="620" fill="#F5F8FC"/>
+
+  <!-- Minimal -->
+  <text x="110" y="70" class="label">Minimal</text>
+  <text x="110" y="98" class="note">Cleaner lines and less detail</text>
+  <g transform="translate(90 130)">
+    <rect width="420" height="420" rx="104" fill="url(#bgMinimal)"/>
+    <circle cx="210" cy="210" r="152" fill="#FFFFFF" fill-opacity="0.12"/>
+    <circle cx="210" cy="210" r="146" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="8" stroke-dasharray="14 14"/>
+    <g filter="url(#shadow)">
+      <path d="M210 324C140 271 98 226 98 165C98 115 134 79 179 79C206 79 229 90 245 110C261 90 284 79 311 79C356 79 392 115 392 165C392 226 350 271 280 324L245 344L210 324Z" fill="#FFFFFF"/>
+      <path d="M130 212H168L192 180L212 234L232 196L254 212H292" stroke="#D84A71" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Premium -->
+  <text x="590" y="70" class="label">Premium</text>
+  <text x="590" y="98" class="note">Richer contrast and more elegant massing</text>
+  <g transform="translate(570 130)">
+    <rect width="420" height="420" rx="104" fill="url(#bgPremium)"/>
+    <circle cx="210" cy="210" r="156" fill="#FFFFFF" fill-opacity="0.08"/>
+    <circle cx="210" cy="210" r="146" stroke="#FFD8E0" stroke-opacity="0.45" stroke-width="8"/>
+    <g filter="url(#shadow)">
+      <path d="M210 328C136 273 92 226 92 161C92 108 130 70 179 70C208 70 234 82 250 104C267 82 292 70 321 70C370 70 408 108 408 161C408 226 364 273 290 328L250 351L210 328Z" fill="#FFF7F9"/>
+      <path d="M122 220H161L190 183L213 247L236 202L265 220H303" stroke="#9F2248" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M210 146C229 146 244 131 244 112C244 93 229 78 210 78C191 78 176 93 176 112C176 131 191 146 210 146Z" fill="#FFD8E0"/>
+    </g>
+  </g>
+
+  <!-- Clinical -->
+  <text x="1070" y="70" class="label">Clinical</text>
+  <text x="1070" y="98" class="note">Sharper and more medical-looking</text>
+  <g transform="translate(1050 130)">
+    <rect width="420" height="420" rx="104" fill="url(#bgClinical)"/>
+    <circle cx="210" cy="210" r="150" fill="#FFFFFF" fill-opacity="0.1"/>
+    <circle cx="210" cy="210" r="146" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="8" stroke-dasharray="10 16"/>
+    <g filter="url(#shadow)">
+      <path d="M210 324C140 272 98 227 98 165C98 114 135 77 181 77C207 77 230 88 246 108C263 88 286 77 312 77C358 77 395 114 395 165C395 227 353 272 283 324L246 346L210 324Z" fill="#FFFFFF"/>
+      <path d="M122 214H160L187 177L212 240L237 194L260 214H298" stroke="#B92D58" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M188 106H232M210 84V128" stroke="#FFD8E0" stroke-width="12" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,143 @@
+<svg width="1800" height="1180" viewBox="0 0 1800 1180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="b1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1459D9"/>
+      <stop offset="100%" stop-color="#53C0F5"/>
+    </linearGradient>
+    <linearGradient id="b2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D93B63"/>
+      <stop offset="100%" stop-color="#FF7A8F"/>
+    </linearGradient>
+    <linearGradient id="b3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A7C6C"/>
+      <stop offset="100%" stop-color="#49C5A8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0B3A82" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .title { font: 700 40px Arial, sans-serif; fill: #1F2937; }
+      .sub { font: 400 24px Arial, sans-serif; fill: #5B6B7A; }
+      .label { font: 700 20px Arial, sans-serif; fill: #1F2937; }
+      .note { font: 400 18px Arial, sans-serif; fill: #5B6B7A; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1180" fill="#F5F8FC"/>
+  <text x="90" y="88" class="title">10 Icon Concepts: Pill + Heart + Pulse</text>
+  <text x="90" y="126" class="sub">Focused exploration for a medication reminder app</text>
+
+  <!-- 1 -->
+  <g transform="translate(90 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b1)"/>
+    <path d="M140 220C91 183 62 153 62 113C62 81 85 56 115 56C132 56 148 64 158 78C168 64 184 56 201 56C231 56 254 81 254 113C254 153 225 183 176 220L158 231L140 220Z" fill="#FFFFFF"/>
+    <path d="M85 145H111L127 119L148 167L166 136L182 145H213" stroke="#1459D9" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="96" y="168" width="88" height="34" rx="17" fill="#E8F1FE"/>
+    <path d="M140 168C164 168 184 186 184 185C184 184 164 202 140 202V168Z" fill="#53C0F5"/>
+  </g>
+  <text x="100" y="492" class="label">1. Heart Monitor Capsule</text>
+  <text x="100" y="520" class="note">Balanced and recognizable</text>
+
+  <!-- 2 -->
+  <g transform="translate(430 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b2)"/>
+    <path d="M140 214C96 180 70 153 70 118C70 89 91 67 118 67C135 67 149 75 158 89C167 75 181 67 198 67C225 67 246 89 246 118C246 153 220 180 176 214L158 225L140 214Z" fill="#FFFFFF"/>
+    <path d="M88 144H113L130 124L146 162L162 136L178 144H202" stroke="#D93B63" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="208" cy="196" r="34" fill="#FFFFFF"/>
+    <rect x="186" y="182" width="44" height="28" rx="14" fill="#FFD6DE"/>
+    <path d="M208 182C220 182 230 191 230 196C230 201 220 210 208 210V182Z" fill="#FF7A8F"/>
+  </g>
+  <text x="440" y="492" class="label">2. Heart + Floating Pill</text>
+  <text x="440" y="520" class="note">Warmer and friendlier</text>
+
+  <!-- 3 -->
+  <g transform="translate(770 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b3)"/>
+    <circle cx="140" cy="140" r="92" fill="#FFFFFF"/>
+    <path d="M140 199C109 176 90 157 90 131C90 109 106 93 127 93C139 93 149 98 156 108C163 98 173 93 185 93C206 93 222 109 222 131C222 157 203 176 172 199L156 208L140 199Z" fill="#49C5A8"/>
+    <path d="M93 143H117L130 126L145 160L159 136L173 143H188" stroke="#0A7C6C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="108" y="60" width="64" height="26" rx="13" transform="rotate(18 108 60)" fill="#E8FFF8"/>
+  </g>
+  <text x="780" y="492" class="label">3. White Roundel Heart</text>
+  <text x="780" y="520" class="note">Clean app-store look</text>
+
+  <!-- 4 -->
+  <g transform="translate(1110 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b1)"/>
+    <rect x="84" y="118" width="112" height="44" rx="22" fill="#FFFFFF"/>
+    <path d="M140 118C171 118 196 138 196 140C196 142 171 162 140 162V118Z" fill="#53C0F5"/>
+    <path d="M140 224C100 193 76 167 76 133C76 104 97 83 124 83C140 83 153 89 162 101C171 89 184 83 200 83C227 83 248 104 248 133C248 167 224 193 184 224L162 238L140 224Z" stroke="#FFFFFF" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M86 140H109L126 121L142 166L159 133L176 140H198" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="1120" y="492" class="label">4. Capsule Inside Heartline</text>
+  <text x="1120" y="520" class="note">Stronger symbolism</text>
+
+  <!-- 5 -->
+  <g transform="translate(1450 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b2)"/>
+    <path d="M140 76L216 114V172C216 209 190 236 140 252C90 236 64 209 64 172V114L140 76Z" fill="#FFFFFF"/>
+    <path d="M140 206C116 188 100 174 100 154C100 137 112 124 128 124C137 124 145 128 151 135C156 128 164 124 173 124C189 124 201 137 201 154C201 174 185 188 161 206L151 213L140 206Z" fill="#FF7A8F"/>
+    <path d="M94 159H113L126 144L141 176L154 151L166 159H187" stroke="#D93B63" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="106" y="96" width="68" height="22" rx="11" fill="#FFD6DE"/>
+  </g>
+  <text x="1460" y="492" class="label">5. Shielded Heart Pulse</text>
+  <text x="1460" y="520" class="note">Safer, more clinical</text>
+
+  <!-- 6 -->
+  <g transform="translate(90 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b3)"/>
+    <circle cx="140" cy="140" r="88" fill="#FFFFFF"/>
+    <rect x="88" y="166" width="104" height="34" rx="17" fill="#DFFBF2"/>
+    <path d="M140 166C169 166 192 182 192 183C192 184 169 200 140 200V166Z" fill="#49C5A8"/>
+    <path d="M140 128C111 106 94 89 94 67C94 48 108 34 126 34C137 34 146 39 152 47C158 39 167 34 178 34C196 34 210 48 210 67C210 89 193 106 164 128L152 136L140 128Z" transform="translate(0 62)" fill="#49C5A8"/>
+    <path d="M84 143H106L121 127L138 165L155 138L171 143H196" stroke="#0A7C6C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="100" y="922" class="label">6. Badge Heart Pill</text>
+  <text x="100" y="950" class="note">Strong icon silhouette</text>
+
+  <!-- 7 -->
+  <g transform="translate(430 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b1)"/>
+    <path d="M140 220C94 184 68 156 68 120C68 90 90 68 118 68C134 68 148 75 158 88C167 75 181 68 197 68C225 68 247 90 247 120C247 156 221 184 175 220L158 231L140 220Z" fill="#FFFFFF"/>
+    <path d="M83 151H104L119 134L135 172L151 145L166 151H197" stroke="#1459D9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="176" y="90" width="28" height="90" rx="14" transform="rotate(42 176 90)" fill="#E8F1FE"/>
+    <path d="M176 90C188 90 198 110 198 135C198 160 188 180 176 180V90Z" transform="rotate(42 176 90)" fill="#53C0F5"/>
+  </g>
+  <text x="440" y="922" class="label">7. Diagonal Capsule Heart</text>
+  <text x="440" y="950" class="note">More dynamic and youthful</text>
+
+  <!-- 8 -->
+  <g transform="translate(770 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b2)"/>
+    <circle cx="140" cy="140" r="90" fill="#FFFFFF" fill-opacity="0.18"/>
+    <path d="M140 209C100 178 77 153 77 120C77 92 97 72 123 72C139 72 152 79 160 91C168 79 181 72 197 72C223 72 243 92 243 120C243 153 220 178 180 209L160 221L140 209Z" fill="#FFFFFF"/>
+    <path d="M88 145H109L124 127L140 165L156 139L171 145H193" stroke="#D93B63" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="107" y="95" width="66" height="24" rx="12" fill="#FFD6DE"/>
+    <path d="M140 95C158 95 173 106 173 107C173 108 158 119 140 119V95Z" fill="#FF7A8F"/>
+  </g>
+  <text x="780" y="922" class="label">8. Soft Heart Capsule</text>
+  <text x="780" y="950" class="note">Calm and approachable</text>
+
+  <!-- 9 -->
+  <g transform="translate(1110 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b3)"/>
+    <path d="M140 78C194 78 234 116 234 168C234 191 226 212 211 230H69C54 212 46 191 46 168C46 116 86 78 140 78Z" fill="#FFFFFF"/>
+    <path d="M93 170H114L129 149L145 188L160 162L176 170H197" stroke="#0A7C6C" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M140 222C106 196 86 176 86 149C86 126 103 110 124 110C136 110 146 115 152 124C158 115 168 110 180 110C201 110 218 126 218 149C218 176 198 196 164 222L152 230L140 222Z" stroke="#49C5A8" stroke-width="12" stroke-linejoin="round"/>
+    <rect x="110" y="62" width="60" height="24" rx="12" fill="#DFFBF2"/>
+  </g>
+  <text x="1120" y="922" class="label">9. Heart Halo Pulse</text>
+  <text x="1120" y="950" class="note">Distinctive app badge</text>
+
+  <!-- 10 -->
+  <g transform="translate(1450 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#b1)"/>
+    <path d="M140 208C96 176 72 152 72 119C72 92 92 72 117 72C132 72 145 78 154 89C162 78 175 72 190 72C215 72 235 92 235 119C235 152 211 176 167 208L154 217L140 208Z" fill="#FFFFFF"/>
+    <rect x="102" y="106" width="76" height="28" rx="14" fill="#E8F1FE"/>
+    <path d="M140 106C161 106 178 118 178 120C178 122 161 134 140 134V106Z" fill="#53C0F5"/>
+    <path d="M84 155H111L125 137L140 174L156 147L171 155H198" stroke="#1459D9" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="205" cy="91" r="16" fill="#FFFFFF"/>
+  </g>
+  <text x="1460" y="922" class="label">10. Minimal Heart Pulse Pill</text>
+  <text x="1460" y="950" class="note">Simple and scalable</text>
+</svg>

@@ -1,0 +1,141 @@
+# ------------------------------
+# Android / Gradle build outputs
+# ------------------------------
+.gradle/
+.kotlinc/
+.kotlin/
+build/
+**/build/
+out/
+gen/
+bin/
+
+# APK / AAB / generated binaries
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+
+# Native build outputs
+.externalNativeBuild/
+.cxx/
+
+# ------------------------------
+# Local machine and secrets
+# ------------------------------
+local.properties
+**/local.properties
+*.keystore
+*.jks
+keystore.properties
+**/keystore.properties
+*.pem
+*.p12
+*.pfx
+*.key
+*.crt
+*.cer
+*.der
+
+# Environment files: keep documented templates only
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!.env.sample
+!.env.template
+!**/.env.example
+!**/.env.sample
+!**/.env.template
+
+# Credentials and service-account exports
+credentials.json
+**/credentials.json
+service-account*.json
+**/service-account*.json
+*serviceAccount*.json
+**/*serviceAccount*.json
+firebase-adminsdk-*.json
+**/firebase-adminsdk-*.json
+client_secret*.json
+**/client_secret*.json
+secrets/
+**/secrets/
+*.secrets.*
+*.secret
+*.token
+*.tokens
+*.auth
+*.sqlite
+*.sqlite3
+*.db
+
+# Google/Firebase local config (often environment-specific)
+google-services.json
+**/google-services.json
+GoogleService-Info.plist
+**/GoogleService-Info.plist
+
+# ------------------------------
+# IDE files
+# ------------------------------
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+.codex/
+.agents/
+
+# Navigation editor temp files
+.navigation/
+
+# Android Studio captures
+captures/
+
+# ------------------------------
+# OS / tooling noise
+# ------------------------------
+.DS_Store
+Thumbs.db
+*.log
+
+# ------------------------------
+# Optional caches and temp files
+# ------------------------------
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.cache/
+**/.cache/
+
+# ------------------------------
+# Web app (embedded in monorepo)
+# ------------------------------
+web/node_modules/
+web/dist/
+web/.vite/
+web/test-results/
+web/playwright-report/
+.vercel/
+**/.vercel/
+
+# Node/Firebase generated output
+node_modules/
+**/node_modules/
+functions/lib/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# Test and coverage artifacts
+coverage/
+**/coverage/
+test-results/
+**/test-results/
+playwright-report/
+**/playwright-report/

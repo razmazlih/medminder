@@ -1,0 +1,127 @@
+<svg width="1800" height="1180" viewBox="0 0 1800 1180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1357D7"/>
+      <stop offset="100%" stop-color="#54C2F6"/>
+    </linearGradient>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D73E67"/>
+      <stop offset="100%" stop-color="#FF889A"/>
+    </linearGradient>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B7C6B"/>
+      <stop offset="100%" stop-color="#4CC8AA"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0B3A82" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .title { font: 700 40px Arial, sans-serif; fill: #1F2937; }
+      .sub { font: 400 24px Arial, sans-serif; fill: #5B6B7A; }
+      .label { font: 700 20px Arial, sans-serif; fill: #1F2937; }
+      .note { font: 400 18px Arial, sans-serif; fill: #5B6B7A; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1180" fill="#F5F8FC"/>
+  <text x="90" y="88" class="title">10 Icon Concepts: Heart + Pulse</text>
+  <text x="90" y="126" class="sub">Variations inspired by concept 1, without any pill shapes</text>
+
+  <!-- 1 -->
+  <g transform="translate(90 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg1)"/>
+    <path d="M140 220C91 183 62 153 62 113C62 81 85 56 115 56C132 56 148 64 158 78C168 64 184 56 201 56C231 56 254 81 254 113C254 153 225 183 176 220L158 231L140 220Z" fill="#FFFFFF"/>
+    <path d="M86 145H110L128 118L148 169L167 135L184 145H214" stroke="#1357D7" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="100" y="492" class="label">1. Classic Heart Monitor</text>
+  <text x="100" y="520" class="note">Closest to the original direction</text>
+
+  <!-- 2 -->
+  <g transform="translate(430 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg2)"/>
+    <path d="M140 215C98 181 72 153 72 119C72 90 93 68 120 68C136 68 149 75 158 87C167 75 180 68 196 68C223 68 244 90 244 119C244 153 218 181 176 215L158 226L140 215Z" fill="#FFFFFF"/>
+    <path d="M92 145H113L128 128L143 160L157 138L172 145H193" stroke="#D73E67" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="158" cy="87" r="10" fill="#FFD8E0"/>
+  </g>
+  <text x="440" y="492" class="label">2. Soft Rounded Pulse</text>
+  <text x="440" y="520" class="note">Warmer and friendlier</text>
+
+  <!-- 3 -->
+  <g transform="translate(770 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg3)"/>
+    <circle cx="140" cy="140" r="90" fill="#FFFFFF"/>
+    <path d="M140 203C109 179 91 160 91 133C91 111 107 95 128 95C139 95 149 100 156 110C163 100 173 95 184 95C205 95 221 111 221 133C221 160 203 179 172 203L156 212L140 203Z" fill="#4CC8AA"/>
+    <path d="M98 145H117L130 127L145 159L159 136L174 145H187" stroke="#0B7C6B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="780" y="492" class="label">3. Heart In Circle</text>
+  <text x="780" y="520" class="note">Very app-store friendly</text>
+
+  <!-- 4 -->
+  <g transform="translate(1110 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg1)"/>
+    <path d="M140 225C100 194 76 168 76 134C76 105 97 84 123 84C139 84 152 90 161 102C170 90 183 84 199 84C225 84 246 105 246 134C246 168 222 194 182 225L161 239L140 225Z" stroke="#FFFFFF" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M86 141H109L127 120L148 169L167 136L184 141H206" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="1120" y="492" class="label">4. Outline Heart Pulse</text>
+  <text x="1120" y="520" class="note">More minimal and modern</text>
+
+  <!-- 5 -->
+  <g transform="translate(1450 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg2)"/>
+    <path d="M140 220C94 184 66 155 66 116C66 85 88 61 117 61C134 61 148 69 158 82C168 69 182 61 199 61C228 61 250 85 250 116C250 155 222 184 176 220L158 231L140 220Z" fill="#FFFFFF"/>
+    <path d="M85 149H107L123 132L138 168L153 142L168 149H196" stroke="#D73E67" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M140 111C149 111 156 104 156 95C156 87 149 80 140 80C131 80 124 87 124 95C124 104 131 111 140 111Z" fill="#FFD8E0"/>
+  </g>
+  <text x="1460" y="492" class="label">5. Heart Drop Accent</text>
+  <text x="1460" y="520" class="note">Softer emotional feel</text>
+
+  <!-- 6 -->
+  <g transform="translate(90 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg3)"/>
+    <path d="M140 218C97 184 71 157 71 122C71 92 92 70 119 70C135 70 149 77 158 90C166 77 180 70 196 70C223 70 244 92 244 122C244 157 218 184 175 218L158 229L140 218Z" fill="#FFFFFF"/>
+    <path d="M85 146H107L124 129L141 164L157 137L173 146H195" stroke="#0B7C6B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="140" cy="140" r="84" stroke="#DFFBF2" stroke-width="10" stroke-dasharray="10 14"/>
+  </g>
+  <text x="100" y="922" class="label">6. Halo Pulse Heart</text>
+  <text x="100" y="950" class="note">Distinct badge silhouette</text>
+
+  <!-- 7 -->
+  <g transform="translate(430 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg1)"/>
+    <path d="M140 215C95 180 69 152 69 118C69 89 90 67 117 67C133 67 147 74 157 86C166 74 180 67 196 67C223 67 244 89 244 118C244 152 218 180 173 215L157 225L140 215Z" fill="#FFFFFF"/>
+    <path d="M83 146H104L120 128L136 165L152 140L168 146H198" stroke="#1357D7" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M96 178C111 191 124 197 140 197C156 197 169 191 184 178" stroke="#D6E8FF" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <text x="440" y="922" class="label">7. Smile Pulse Heart</text>
+  <text x="440" y="950" class="note">Friendlier and more human</text>
+
+  <!-- 8 -->
+  <g transform="translate(770 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg2)"/>
+    <circle cx="140" cy="140" r="94" fill="#FFFFFF" fill-opacity="0.16"/>
+    <path d="M140 213C100 181 77 155 77 123C77 95 97 75 123 75C139 75 152 81 160 93C168 81 181 75 197 75C223 75 243 95 243 123C243 155 220 181 180 213L160 225L140 213Z" fill="#FFFFFF"/>
+    <path d="M88 146H111L126 129L141 164L157 139L172 146H193" stroke="#D73E67" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="780" y="922" class="label">8. Glow Heart Monitor</text>
+  <text x="780" y="950" class="note">Bright and store-visible</text>
+
+  <!-- 9 -->
+  <g transform="translate(1110 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg3)"/>
+    <path d="M140 220C95 184 68 155 68 118C68 88 90 66 117 66C133 66 147 73 157 85C166 73 180 66 196 66C223 66 245 88 245 118C245 155 218 184 173 220L157 231L140 220Z" fill="#FFFFFF"/>
+    <path d="M86 147H108L125 130L142 166L158 139L174 147H196" stroke="#0B7C6B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M117 96C124 88 132 84 140 84C148 84 156 88 163 96" stroke="#DFFBF2" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="1120" y="922" class="label">9. Pure Medical Heart</text>
+  <text x="1120" y="950" class="note">Clean and trustworthy</text>
+
+  <!-- 10 -->
+  <g transform="translate(1450 610)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#bg1)"/>
+    <path d="M140 214C98 181 73 154 73 121C73 93 94 72 120 72C136 72 149 79 158 91C167 79 180 72 196 72C222 72 243 93 243 121C243 154 218 181 176 214L158 225L140 214Z" fill="#FFFFFF"/>
+    <path d="M93 146H113L128 124L146 170L164 136L181 146H205" stroke="#1357D7" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="140" cy="145" r="58" stroke="#D6E8FF" stroke-width="6"/>
+  </g>
+  <text x="1460" y="922" class="label">10. Target Heart Pulse</text>
+  <text x="1460" y="950" class="note">Sharp and memorable</text>
+</svg>

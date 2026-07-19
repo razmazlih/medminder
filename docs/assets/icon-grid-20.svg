@@ -1,0 +1,251 @@
+<svg width="1800" height="1700" viewBox="0 0 1800 1700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F5BDC"/>
+      <stop offset="100%" stop-color="#4FC3F7"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B3A82"/>
+      <stop offset="100%" stop-color="#1976D2"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00897B"/>
+      <stop offset="100%" stop-color="#4DB6AC"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EF6C00"/>
+      <stop offset="100%" stop-color="#FFB74D"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0D47A1" flood-opacity="0.15"/>
+    </filter>
+    <style>
+      .title { font: 700 40px Arial, sans-serif; fill: #1F2937; }
+      .sub { font: 400 24px Arial, sans-serif; fill: #5B6B7A; }
+      .label { font: 700 20px Arial, sans-serif; fill: #1F2937; }
+      .note { font: 400 18px Arial, sans-serif; fill: #5B6B7A; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1700" fill="#F4F8FC"/>
+  <text x="90" y="90" class="title">20 App Icon Directions for MedMinder</text>
+  <text x="90" y="128" class="sub">A visual exploration of trust, reminders, care, precision, and accessibility</text>
+
+  <!-- 1 -->
+  <g transform="translate(90 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g1)"/>
+    <circle cx="140" cy="140" r="92" fill="#FFFFFF" fill-opacity="0.14"/>
+    <path d="M140 62L205 95V146C205 191 176 229 140 241C104 229 75 191 75 146V95L140 62Z" fill="#FFFFFF"/>
+    <path d="M112 150L131 169L171 127" stroke="#1565C0" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="100" y="492" class="label">1. Shield Check</text>
+  <text x="100" y="520" class="note">Trust and safety</text>
+
+  <!-- 2 -->
+  <g transform="translate(430 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g1)"/>
+    <rect x="58" y="102" width="164" height="76" rx="38" fill="#FFFFFF"/>
+    <path d="M140 102C174 102 202 128 202 140C202 152 174 178 140 178V102Z" fill="#64B5F6"/>
+    <circle cx="140" cy="140" r="42" fill="#FFFFFF"/>
+    <circle cx="140" cy="140" r="48" stroke="#1565C0" stroke-width="8"/>
+    <path d="M140 120V142L157 153" stroke="#1565C0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="440" y="492" class="label">2. Capsule Clock</text>
+  <text x="440" y="520" class="note">Reminder-first</text>
+
+  <!-- 3 -->
+  <g transform="translate(770 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g2)"/>
+    <path d="M140 222C84 184 56 152 56 109C56 74 81 50 114 50C132 50 149 59 159 74C170 59 186 50 205 50C238 50 264 74 264 109C264 152 236 184 180 222L160 235L140 222Z" fill="#FFFFFF"/>
+    <rect x="186" y="82" width="50" height="50" rx="16" fill="#43A047"/>
+    <path d="M211 93V121M197 107H225" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="780" y="492" class="label">3. Heart Cross</text>
+  <text x="780" y="520" class="note">Warm and caring</text>
+
+  <!-- 4 -->
+  <g transform="translate(1110 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g3)"/>
+    <rect x="66" y="70" width="148" height="140" rx="28" fill="#FFFFFF"/>
+    <path d="M66 116H214M115 70V210M165 70V210" stroke="#D3E7E4" stroke-width="8"/>
+    <rect x="82" y="86" width="18" height="18" rx="5" fill="#4FC3F7"/>
+    <rect x="132" y="86" width="18" height="18" rx="5" fill="#66BB6A"/>
+    <rect x="182" y="86" width="18" height="18" rx="5" fill="#0F5BDC"/>
+    <rect x="103" y="150" width="74" height="24" rx="12" fill="#C8E6C9"/>
+  </g>
+  <text x="1120" y="492" class="label">4. Pill Box</text>
+  <text x="1120" y="520" class="note">Daily organization</text>
+
+  <!-- 5 -->
+  <g transform="translate(1450 180)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g2)"/>
+    <path d="M140 66C101 66 76 96 76 134V155C76 167 71 178 62 188L51 200C47 205 50 212 57 212H223C230 212 233 205 229 200L218 188C209 178 204 167 204 155V134C204 96 179 66 140 66Z" fill="#FFFFFF"/>
+    <path d="M116 212C121 227 131 234 140 234C149 234 159 227 164 212" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+    <rect x="112" y="118" width="56" height="32" rx="16" fill="#4FC3F7"/>
+    <path d="M140 118C155 118 168 129 168 134C168 139 155 150 140 150V118Z" fill="#1565C0"/>
+  </g>
+  <text x="1460" y="492" class="label">5. Bell Pill</text>
+  <text x="1460" y="520" class="note">Notification focus</text>
+
+  <!-- 6 -->
+  <g transform="translate(90 590)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g4)"/>
+    <circle cx="140" cy="140" r="82" fill="#FFFFFF"/>
+    <path d="M140 87V141L178 162" stroke="#EF6C00" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M99 72L112 92M181 72L168 92M72 140H92M188 140H208M99 208L112 188M181 208L168 188" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <text x="100" y="902" class="label">6. Alert Sun</text>
+  <text x="100" y="930" class="note">Energy and urgency</text>
+
+  <!-- 7 -->
+  <g transform="translate(430 590)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g3)"/>
+    <path d="M86 88H194C206 88 216 98 216 110V186C216 198 206 208 194 208H86C74 208 64 198 64 186V110C64 98 74 88 86 88Z" fill="#FFFFFF"/>
+    <path d="M96 132H184M96 158H160" stroke="#B7D8D4" stroke-width="10" stroke-linecap="round"/>
+    <rect x="172" y="72" width="42" height="42" rx="14" fill="#43A047"/>
+    <path d="M193 82V104M182 93H204" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="440" y="902" class="label">7. Medical Card</text>
+  <text x="440" y="930" class="note">Clinical and clear</text>
+
+  <!-- 8 -->
+  <g transform="translate(770 590)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g1)"/>
+    <circle cx="112" cy="116" r="42" fill="#FFFFFF"/>
+    <circle cx="168" cy="116" r="42" fill="#FFFFFF" fill-opacity="0.85"/>
+    <rect x="86" y="152" width="108" height="40" rx="20" fill="#FFFFFF"/>
+    <path d="M112 116L168 116" stroke="#64B5F6" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="780" y="902" class="label">8. Molecule Pill</text>
+  <text x="780" y="930" class="note">Modern health tech</text>
+
+  <!-- 9 -->
+  <g transform="translate(1110 590)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g2)"/>
+    <path d="M140 70L220 112V167C220 211 188 244 140 258C92 244 60 211 60 167V112L140 70Z" fill="#FFFFFF"/>
+    <rect x="110" y="121" width="60" height="78" rx="18" fill="#E3F2FD"/>
+    <rect x="122" y="106" width="36" height="18" rx="9" fill="#E3F2FD"/>
+    <path d="M119 156L134 171L163 140" stroke="#1565C0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="1120" y="902" class="label">9. Shield Bottle</text>
+  <text x="1120" y="930" class="note">Protected medication</text>
+
+  <!-- 10 -->
+  <g transform="translate(1450 590)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g4)"/>
+    <path d="M76 144C76 104 108 72 148 72C188 72 220 104 220 144C220 188 188 216 148 216C108 216 76 184 76 144Z" fill="#FFFFFF"/>
+    <path d="M121 110H175M121 144H175M121 178H155" stroke="#FFB74D" stroke-width="12" stroke-linecap="round"/>
+    <rect x="66" y="172" width="70" height="40" rx="20" fill="#FFFFFF"/>
+  </g>
+  <text x="1460" y="902" class="label">10. Chat Care</text>
+  <text x="1460" y="930" class="note">Supportive assistant</text>
+
+  <!-- 11 -->
+  <g transform="translate(90 1000)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g1)"/>
+    <path d="M87 98H193C206 98 216 108 216 121V183C216 196 206 206 193 206H87C74 206 64 196 64 183V121C64 108 74 98 87 98Z" fill="#FFFFFF"/>
+    <path d="M97 121H183M97 147H165M97 173H150" stroke="#BFDDF9" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="196" cy="86" r="28" fill="#43A047"/>
+    <path d="M196 74V98M184 86H208" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="100" y="1312" class="label">11. Checklist</text>
+  <text x="100" y="1340" class="note">Compliance and tracking</text>
+
+  <!-- 12 -->
+  <g transform="translate(430 1000)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g3)"/>
+    <path d="M140 72L196 96L220 152L140 236L60 152L84 96L140 72Z" fill="#FFFFFF"/>
+    <circle cx="140" cy="152" r="30" fill="#C8E6C9"/>
+    <path d="M140 126V178M114 152H166" stroke="#00897B" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <text x="440" y="1312" class="label">12. Care Gem</text>
+  <text x="440" y="1340" class="note">Premium and precise</text>
+
+  <!-- 13 -->
+  <g transform="translate(770 1000)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g2)"/>
+    <rect x="88" y="70" width="104" height="140" rx="26" fill="#FFFFFF"/>
+    <circle cx="140" cy="184" r="10" fill="#1565C0"/>
+    <path d="M112 102H168M112 126H168M112 150H150" stroke="#BFDDF9" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="194" cy="94" r="26" fill="#43A047"/>
+    <path d="M182 94H206" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="780" y="1312" class="label">13. Phone Reminder</text>
+  <text x="780" y="1340" class="note">App-native identity</text>
+
+  <!-- 14 -->
+  <g transform="translate(1110 1000)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g4)"/>
+    <circle cx="140" cy="140" r="84" fill="#FFFFFF"/>
+    <path d="M140 92V140L170 170" stroke="#EF6C00" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="173" y="72" width="44" height="44" rx="14" fill="#43A047"/>
+    <path d="M195 82V106M183 94H207" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="1120" y="1312" class="label">14. Clock Plus</text>
+  <text x="1120" y="1340" class="note">Scheduling emphasis</text>
+
+  <!-- 15 -->
+  <g transform="translate(1450 1000)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g1)"/>
+    <path d="M103 84H177C188 84 196 92 196 103V214L140 186L84 214V103C84 92 92 84 103 84Z" fill="#FFFFFF"/>
+    <path d="M113 120H167M113 148H167" stroke="#BFDDF9" stroke-width="10" stroke-linecap="round"/>
+    <rect x="112" y="172" width="56" height="20" rx="10" fill="#64B5F6"/>
+  </g>
+  <text x="1460" y="1312" class="label">15. Dosage Journal</text>
+  <text x="1460" y="1340" class="note">History and logs</text>
+
+  <!-- 16 -->
+  <g transform="translate(90 1410)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g3)"/>
+    <circle cx="112" cy="124" r="46" fill="#FFFFFF"/>
+    <circle cx="168" cy="124" r="46" fill="#FFFFFF"/>
+    <path d="M140 180C101 180 70 198 58 226H222C210 198 179 180 140 180Z" fill="#FFFFFF"/>
+    <rect x="126" y="88" width="28" height="72" rx="14" fill="#4DB6AC"/>
+  </g>
+  <text x="100" y="1722" class="label">16. People Care</text>
+  <text x="100" y="1750" class="note">Family and caregivers</text>
+
+  <!-- 17 -->
+  <g transform="translate(430 1410)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g2)"/>
+    <circle cx="140" cy="140" r="86" fill="#FFFFFF"/>
+    <path d="M140 90L152 124L188 124L159 145L170 180L140 159L110 180L121 145L92 124L128 124L140 90Z" fill="#1565C0"/>
+    <rect x="175" y="72" width="40" height="40" rx="14" fill="#43A047"/>
+    <path d="M195 82V102M185 92H205" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="440" y="1722" class="label">17. Star Health</text>
+  <text x="440" y="1750" class="note">Optimistic and friendly</text>
+
+  <!-- 18 -->
+  <g transform="translate(770 1410)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g1)"/>
+    <rect x="80" y="88" width="120" height="104" rx="26" fill="#FFFFFF"/>
+    <rect x="100" y="64" width="80" height="34" rx="17" fill="#FFFFFF"/>
+    <path d="M108 130H172M108 156H154" stroke="#BFDDF9" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="198" cy="180" r="34" fill="#43A047"/>
+    <path d="M184 181L194 191L213 170" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="780" y="1722" class="label">18. Bottle Check</text>
+  <text x="780" y="1750" class="note">Medication completion</text>
+
+  <!-- 19 -->
+  <g transform="translate(1110 1410)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g4)"/>
+    <path d="M71 148C71 108 103 76 143 76C163 76 181 84 194 97L216 82V128H170L186 113C176 104 161 98 146 98C119 98 98 119 98 146C98 173 119 194 146 194C164 194 180 185 190 171L207 186C192 206 171 218 146 218C105 218 71 186 71 148Z" fill="#FFFFFF"/>
+    <rect x="150" y="132" width="64" height="32" rx="16" fill="#FFE0B2"/>
+    <path d="M182 132C199 132 214 145 214 148C214 151 199 164 182 164V132Z" fill="#EF6C00"/>
+  </g>
+  <text x="1120" y="1722" class="label">19. Renew Dose</text>
+  <text x="1120" y="1750" class="note">Refill and continuity</text>
+
+  <!-- 20 -->
+  <g transform="translate(1450 1410)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="72" fill="url(#g3)"/>
+    <circle cx="140" cy="140" r="88" fill="#FFFFFF"/>
+    <path d="M110 122H170M110 158H170" stroke="#A5D6A7" stroke-width="12" stroke-linecap="round"/>
+    <path d="M140 92V188" stroke="#00897B" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="140" cy="140" r="18" fill="#00897B"/>
+  </g>
+  <text x="1460" y="1722" class="label">20. Medical Compass</text>
+  <text x="1460" y="1750" class="note">Guidance and clarity</text>
+</svg>
