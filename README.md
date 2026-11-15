@@ -1,186 +1,157 @@
 <p align="center">
-  <img src="docs/images/medminder-overview.svg" alt="MedMinder — a Hebrew-first Android and Web system for medication schedules, intake records and history. Concept illustration, not a screenshot." width="100%">
-</p>
-
-<p align="center">
-  <strong>One place to plan medication schedules, record intakes, and review what happened.</strong><br>
-  Native Android · Companion Web · Hebrew &amp; RTL · Local-first storage
-</p>
-
-<p align="center">
-  <a href="#what-is-medminder">Overview</a> ·
-  <a href="#what-you-can-do">Features</a> ·
-  <a href="#how-it-fits-together">Architecture</a> ·
-  <a href="#run-it-locally">Get started</a> ·
-  <a href="#status-and-important-limitations">Status &amp; limitations</a>
+  <img src="docs/images/medminder-overview.svg" alt="MedMinder: ניהול תוכניות נטילה, תיעוד והיסטוריה באפליקציית Android ובאתר נלווה. איור המחשה." width="100%">
 </p>
 
 <div dir="rtl">
 
-**בקצרה:** MedMinder הוא פרויקט לניהול תרופות בעברית, עם אפליקציית Android וממשק Web נלווה. אפשר להגדיר זמני נטילה, לתעד נטילות ולצפות בהיסטוריה. הנתונים נשמרים קודם במכשיר, ואפשר להגדיר סנכרון בענן. הגישה מהדפדפן נעשית באמצעות קוד שמופק באפליקציית Android.
+# MedMinder · להבין את שגרת התרופות
 
-זהו פרויקט תוכנה, לא מערכת רפואית מאושרת ולא תחליף להנחיות רפואיות. יש מגבלות ידועות בתזכורות ובסנכרון; אין להסתמך עליו כאמצעי היחיד לזכירת נטילות. התמונות כאן הן איורי הסבר, לא צילומי מסך.
+**מה מתוכנן, מה נלקח ומה כדאי לבדוק שוב?** MedMinder מרכזת את המידע הזה באפליקציית Android ובאתר נלווה, עם ממשק עברי ושמירה מקומית של הנתונים.
+
+זהו מאגר קוד הכולל אפליקציה, אתר ורכיבי סנכרון. הסיור הבא מסביר איך החלקים עובדים יחד, בלי צורך להכיר את הקוד מראש.
+
+[English guide](README.en.md) · [התיעוד הטכני](docs/architecture.md) · [התקנת האתר](web/README.md) · [הגדרת הענן](docs/firebase/README.md)
+
+> **לפני שמתחילים:** האיורים הם תרשימי הסבר של הקוד, לא צילומי מסך ולא מידע רפואי אמיתי. הפרויקט אינו מוצר רפואי מאושר, אינו נותן המלצות טיפול ואין להסתמך עליו כתזכורת היחידה לנטילת תרופות. מגבלות התזכורות והסנכרון מוסברות בהמשך.
+
+## 1. מה עושים עם המערכת?
+
+המערכת מפרידה בין **תוכנית** לבין **מה שקרה בפועל**. הגדרת שעה לנטילה אינה אומרת שהתרופה נלקחה; רישום הנטילה יוצר תיעוד נפרד שאפשר לחזור אליו.
+
+![מסלול השימוש: מגדירים תרופה ותוכנית, מתעדים נטילות, ובודקים את ההיסטוריה. הסבר חזותי ולא צילום מסך.](docs/images/medminder-user-journey-he.svg)
+
+### שלושה מושגים שמסדרים את התמונה
+
+- **תרופה ותוכנית:** שם, מינון, הערות, קשר לאוכל וזמני נטילה. בקוד קיימים מסלולי שעות קבועות, מרווחי שעות ומרווחי ימים.
+- **אירוע נטילה:** רשומה עם זמן וסטטוס, למשל ממתין, נלקח או הוחמץ. יש גם תמיכה ברישום חד־פעמי ולפי צורך.
+- **היסטוריה ויומן שינויים:** אפשר לחפש, לסנן, לתקן זמן נטילה ולמחוק רישום באופן לוגי. מנגנון מבוסס כללים מתעד גם שינויים בדיעבד; זה אינו ניתוח רפואי באמצעות AI.
+
+**דוגמה בלי פרטים רפואיים:** מגדירים פריט לדוגמה לשעה מסוימת, מסמנים שהנטילה בוצעה, ואז רואים בהיסטוריה את האירוע שנרשם. אם טעינו בזמן, תיקון הרישום אינו שינוי של הנחיות הטיפול.
+
+### מה עוד קיים בקוד?
+
+- השבתה ושחזור של תרופות.
+- ייצוא היסטוריה ודוחות לקובצי CSV ו־PDF.
+- ממשק עברי מימין לשמאל, בקרות גדולות ואפשרויות גודל טקסט וניגודיות.
+- אפשרויות PIN וביומטריה ב־Android.
+- אתר נלווה שניגש לאותו מאגר באמצעות קוד שמופק באפליקציה, לא תהליך הרשמה ציבורי עצמאי.
+
+## 2. איך נוצרות התזכורות?
+
+תזכורת אינה רק שעה שמופיעה במסך. האפליקציה צריכה לייצר אירוע עתידי, לתזמן אותו במערכת ההפעלה ולקבל את ההרשאות המתאימות.
+
+![תהליך התזכורות באנדרואיד: תוכנית, אירועי נטילה ותזמון במערכת ההפעלה. התרשים מציין במפורש את חלון התזמון הקצר ואת התלות בהרשאות ובמכשיר.](docs/images/medminder-reminders-he.svg)
+
+**מה מוכח בקוד:** שימוש ב־`AlarmManager` ותהליכים ליצירת אירועים והתראות ב־Android.
+
+**מה עדיין לא מוכח:** אמינות רציפה לאורך ימים ללא פתיחת האפליקציה. מסלולים מרכזיים מייצרים אירועים ליומיים או לשלושה ימים קדימה; לא התבסס מנגנון מילוי רציף שמבטיח המשכיות מעבר לכך. זהו ממצא מסקירת קוד, לא תוצאה של ניסוי ממושך בטלפון.
+
+האתר אינו מוצג כאן כתחליף למנגנון ההתראות המקומי של Android. כדאי לבדוק בנפרד גם אילו פרטים מוצגים על מסך נעול.
+
+## 3. איפה הנתונים נמצאים ואיך הם עוברים?
+
+העיקרון הוא **שמירה מקומית תחילה**: האפליקציה משתמשת ב־Room, והאתר ב־IndexedDB דרך Dexie. כשהסנכרון מוגדר, תור שינויים מאפשר למערכת לנסות להעביר את הרשומות בין המכשירים דרך Firebase.
+
+![מפת הנתונים: מאגרים מקומיים באפליקציה ובדפדפן, ענן אופציונלי, מחזור משיכה־מיזוג־דחיפה ומגבלות פרטיות ושלמות.](docs/images/medminder-sync-privacy-he.svg)
+
+### לקרוא את התרשים צעד־צעד
+
+1. **שומרים מקומית:** הפעולה נכתבת למאגר המקומי. פעולות שדורשות סנכרון נכנסות לתור.
+2. **משתפים גישה:** קוד שמופק באפליקציה משמש לחיבור האתר לאותו מאגר דרך פונקציית שרת.
+3. **מושכים וממזגים:** האתר מושך רשומות ומכריע בין גרסאות לפי זמני העדכון. סימוני מחיקה מאפשרים להעביר גם מחיקות לוגיות.
+4. **דוחפים שינויים:** השינויים המקומיים שבתור נשלחים לענן. הסנכרון באתר פועל באופן מחזורי בזמן שהיישום פעיל; זו אינה הבטחה לפעילות רציפה ברקע.
+
+סוגי הרשומות המסונכרנות הם תרופות, אירועי נטילה ויומן נטילות פנימי. **פרופיל המשתמש אינו חלק מהקבוצה הזו.**
+
+### הצפנה, בלי הבטחות מוגזמות
+
+מטעני הרשומות משתמשים ב־AES-GCM ובמפתחות שנגזרים באמצעות HKDF. אבל קוד הסנכרון, שממנו נגזר המפתח, מועבר גם לשרת. לכן אין בסיס להציג את המימוש כהצפנה מוכחת מקצה לקצה שמגינה מפני השרת עצמו.
+
+גם הצפנת הרשומות בענן אינה אומרת שהעותק המקומי מוצפן: באתר יש רשומות ב־IndexedDB, וב־Android מסד Room ללא שכבת הצפנת מסד שהוכחה בסקירה. הגנות מערכת ההפעלה ונעילת האפליקציה הן שכבות נפרדות.
+
+## 4. מה נמצא בכל חלק של הריפו?
+
+| חלק | הטכנולוגיות המרכזיות | מה הוא עושה |
+| --- | --- | --- |
+| `app/` | Kotlin, Jetpack Compose, Hilt, Room | אפליקציית Android, אחסון מקומי, תזמונים והתראות |
+| `web/` | React 19, TypeScript, Vite, Dexie, Zustand | האתר הנלווה, אחסון בדפדפן וממשקי ניהול והיסטוריה |
+| `functions/` | TypeScript, Firebase Functions | חיבור למאגר, ניהול חיבורי Web וביטול גישה |
+| `firestore.rules` | Firebase Firestore | כללי גישה לרשומות הענן |
+| `docs/` | תיעוד ואיורים | ארכיטקטורה, הוראות התקנה והסברים |
+
+## 5. רוצים להריץ בעצמכם?
+
+לבדיקה ראשונית השתמשו **בנתוני דוגמה בלבד**. לא צריך להזין מידע רפואי אמיתי כדי ללמוד את המערכת.
 
 </div>
-
-## What is MedMinder?
-
-Keeping track of medication involves more than a list of names: **what is scheduled, what was taken, and what needs a closer look?** MedMinder brings those records together in a Hebrew-first interface.
-
-The repository contains three connected parts:
-
-- **An Android application** for medication management, local reminders and intake records.
-- **A companion Web client** for working with the same dataset from a browser.
-- **An optional Firebase backend** for authentication, session management and synchronization.
-
-This is source code you can inspect and build. This README does **not** claim a verified public deployment, published store release, clinical validation or production-readiness.
-
-## What you can do
-
-| Area | Implemented in the repository |
-| --- | --- |
-| **Medication plans** | Store medication name, dose, food relation, notes, dates and scheduling information; deactivate and restore medications. |
-| **Flexible schedules** | Model fixed times, hour intervals and day intervals, with weekday/date controls where supported. See the Web date-filtering limitation below. |
-| **Daily tracking** | View dose events and record a dose as taken; support as-needed / one-off intake records. |
-| **Android reminders** | Schedule notifications with `AlarmManager`. Delivery depends on permissions, device behavior and the current scheduling limitations. |
-| **History & reports** | Search and filter intake records, edit intake time, soft-delete records and export CSV/PDF reports. |
-| **Audit trail** | Keep change records and flag backdated changes using rules. This is not AI-based medical analysis. |
-| **Hebrew-first interface** | RTL layouts, Hebrew typography, large controls, font-size and contrast options. |
-| **Device access controls** | Android PIN/biometric features; optional cloud access through app-generated sync codes. |
-| **Local-first data** | Android Room and browser IndexedDB storage, with an outbox for optional synchronization. |
-
-![Conceptual workflow: plan a schedule, record an intake, review history. Not an application screenshot.](docs/images/medminder-workflow.svg)
-
-### A typical journey
-
-1. **Create a plan on Android.** Enter a medication and its schedule.
-2. **Record what happened.** Use the daily view to record an intake and review its status.
-3. **Look back.** Search the history or export a report for your own review.
-4. **Optionally connect a browser.** Configure Firebase, generate a sync code on Android and use it to join that dataset on the Web.
-
-The Web client is a companion, not an independent public sign-up flow. Android provides the native reminder implementation; browser notifications are not presented here as equivalent.
-
-## How it fits together
-
-![Conceptual architecture: Android Room and Web IndexedDB store local records and synchronize through optional Firebase services.](docs/images/medminder-architecture.svg)
-
-| Layer | Technologies | Responsibility |
-| --- | --- | --- |
-| Android | Kotlin, Jetpack Compose, Hilt, Room, AlarmManager | Native UI, local persistence, scheduling and reminders |
-| Web | React 19, TypeScript, Vite, Dexie, Zustand, TanStack Query, Zod | Browser UI, IndexedDB data, validation and sync state |
-| Backend | Firebase Anonymous Authentication, Firestore, TypeScript Cloud Functions | Dataset access, Web sessions, revocation and encrypted record storage |
-| Reporting | CSV export and jsPDF in the Web client | Portable intake/history reports |
-
-### Synchronization in plain language
-
-Writes go to the local database first. When configured, synchronization pulls cloud records, merges them and pushes queued local changes. Record timestamps drive conflict resolution; soft-deletion markers propagate deletions.
-
-The shared record types are `MEDICATION`, `DOSE_EVENT` and `HIDDEN_INTAKE_LOG`. User profile data is not part of that cloud record set. Foreground Web synchronization runs periodically; this is **not a guarantee of continuous background delivery**.
-
-Payloads use AES-GCM encryption and HKDF-derived keys, but that alone does not establish end-to-end confidentiality. See the security notes below before storing real health information.
-
-## Run it locally
-
-### 1. Get the source
 
 ```bash
 git clone https://github.com/razmazlih/medminder.git
 cd medminder
 ```
 
-### 2. Android
+<div dir="rtl">
 
-- Open the repository in Android Studio with **JDK 17** and Android SDK 35 installed.
-- The app targets Android 35 and supports **Android 8.0 / API 26 and later**.
-- For Firebase integration, supply your own `app/google-services.json` and follow the [Firebase setup guide](docs/firebase/README.md).
-- Run the `app` configuration on an emulator or device. Check notification and alarm permissions on the device.
+**Android:** פותחים ב־Android Studio עם JDK 17 ו־SDK 35. המינימום הוא Android 8.0 / API 26. להגדרת Firebase משתמשים בקובץ `app/google-services.json` של הפרויקט שלכם ובהוראות [ההתקנה](docs/firebase/README.md). אין להעלות קובצי תצורה מקומיים או סודות לריפו.
 
-Do not commit local Firebase configuration, credentials or real patient data.
+**האתר:** משתמשים ב־Node התואם ל־Vite 8, למשל 22.12 ומעלה.
 
-### 3. Web
-
-Use a Node.js version compatible with Vite 8, such as Node **22.12+**.
+</div>
 
 ```bash
 cd web
 npm ci
 cp .env.example .env
-# Fill .env with the Firebase Web configuration for your own project.
+# Configure your own Firebase project in .env.
 npm run dev
 ```
 
-Open the local URL printed by Vite. Real cloud access requires the corresponding Firebase setup and an Android-generated sync code. For isolated development, the repository also includes a fake-cloud adapter selected by `VITE_USE_FAKE_CLOUD=1`; it is a test aid, not a persistent hosted service.
+<div dir="rtl">
 
-For full setup details, see [Web documentation](web/README.md).
+פותחים את הכתובת המקומית שמודפסת בטרמינל. חיבור אמיתי דורש Firebase מוגדר וקוד סנכרון מהאפליקציה. לבדיקות מבודדות קיים מתאם ענן מדומה עם `VITE_USE_FAKE_CLOUD=1`; הוא כלי בדיקה, לא שירות ענן קבוע.
 
-### 4. Optional backend
+חבילת הפונקציות מצהירה בנפרד על Node 20. [הוראות הענן](docs/firebase/README.md) מפרטות אימות אנונימי, כללי גישה ופונקציות. פריסה לשירות ענן עשויה לעלות כסף; אין צורך לפרוס רק כדי לקרוא את הקוד.
 
-The Functions package declares **Node.js 20**. Use the package-specific runtime when building or deploying the backend.
+## 6. בדיקות, שקיפות ומה נשאר לשפר
 
-```bash
-cd functions  # from the repository root
-npm ci
-npm run build
-```
+בבדיקה המקומית של גרסת הקוד שעליה מבוסס התיעוד, **בניית Web כולל TypeScript עברה, ו־52 בדיקות עברו ב־14 קבצים**. התקבלה אזהרה על קובץ JavaScript גדול. לא הורצו כאן בדיקות מכשיר Android או בדיקות דפדפן מקצה לקצה בהצלחה. אין להסיק מבדיקות היחידה שהתזכורות או Firebase אמינים בייצור.
 
-Enable Anonymous Authentication, configure Firestore rules and deploy the callable functions into **your own** Firebase project using the [backend guide](docs/firebase/README.md). Deployment can incur charges and is not required merely to read or inspect this repository.
+פקודות לבדיקה עצמאית מתוך `web/`:
 
-## Checks available in the repository
+</div>
 
 ```bash
-# Web, from web/
 npm run typecheck
 npm run lint
 npm test
 npm run build
-
-# Browser tests; install the Chromium test browser first
 npx playwright install chromium
 npm run test:e2e
-
-# Android, from the repository root
-./gradlew testDebugUnitTest
-./gradlew connectedDebugAndroidTest  # requires a running emulator/device
 ```
 
-The repository contains Web unit/integration tests, Playwright scenarios and Android unit/instrumented tests. **Their presence is not proof that they pass in every environment.** Playwright uses a fake-cloud configuration, so it does not validate production Firebase behavior or real-device reminder reliability. This documentation update does not claim to have run these application test suites.
+<div dir="rtl">
 
-## Status and important limitations
+בדיקות Playwright משתמשות בענן מדומה, לא בענן הייצור. [המדריך באנגלית](README.en.md) כולל גם פקודות לבדיקות Android.
 
-> **Use synthetic data while evaluating.** MedMinder is not a medical device or medical advice, does not check drug interactions, and should not be your only reminder system. Follow your clinician's instructions for medication decisions.
+<a id="status-and-important-limitations"></a>
 
-These are source-review findings, not claims that every failure has been reproduced on a device:
+### מגבלות שחשוב להכיר
 
-- **Reminder horizon:** events are generated only a few days ahead in key flows. A reliable automatic refill beyond that horizon has not been established, so reminders may stop if the app is not reopened. Test long-running behavior before relying on it.
-- **Sync completeness:** the Web pull path limits a query to 1,000 records without complete pagination. Larger datasets may not synchronize fully. Some errors may also be caught without clearly surfacing an incomplete sync to the user.
-- **Date filtering:** the Web fixed-time intake view does not consistently apply weekday and start/end-date rules. Review displayed events against the intended schedule.
-- **Encryption boundary:** the sync code is sent to a backend callable and also used in data-key derivation. Do not interpret encrypted cloud payloads as a verified end-to-end encryption guarantee against the server.
-- **Local privacy:** browser records are stored in IndexedDB; Android uses Room without a demonstrated database-encryption layer. OS protections and access controls are separate from record encryption. Notification content should also be evaluated on a locked device.
-- **Scope:** no iOS client, clinical decision support, multi-patient/caregiver account system or healthcare-provider integration is established by this repository.
+- **תזכורות:** חלון יצירת האירועים קצר; המשכיות לאורך ימים ללא פתיחת האפליקציה דורשת תיקון ואימות.
+- **שלמות סנכרון:** מסלול המשיכה באתר מוגבל ל־1,000 רשומות ללא דפדוף מלא. חלק משגיאות הסנכרון עלולות שלא להשתקף היטב במצב המוצג למשתמש.
+- **כללי תאריכים:** בתצוגת הנטילות באתר, המסלול של שעות קבועות אינו מחיל בעקביות את כללי ימי השבוע ותאריכי ההתחלה והסיום.
+- **פרטיות:** ההצפנה אינה ערובה לסודיות מול השרת, ויש לבדוק גם הגנה על אחסון מקומי ועל תוכן התראות.
+- **גבולות המוצר:** הריפו אינו מוכיח גרסת iOS, מערכת מטפלים וריבוי מטופלים, בדיקת אינטראקציות בין תרופות או אינטגרציה עם ספקי בריאות. אין כאן טענה לפריסה ציבורית מאומתת או לגרסת חנות פעילה.
 
-For implementation details, start with the [Web sync adapter](web/src/sync/firebaseCloudAdapter.ts), [sync engine](web/src/sync/syncEngine.ts), [cryptography module](web/src/core/crypto.ts), [Functions](functions/src/index.ts) and [Firestore rules](firestore.rules).
+אלה נקודות ממוקדות להמשך פיתוח, ולא תכונות שמוצגות כאילו כבר הושלמו.
 
-## Explore the code
+## להעמיק בקוד, כשמתחשק
 
-```text
-medminder/
-├── app/                   Native Android application
-├── web/                   React companion client and browser tests
-├── functions/             Firebase callable functions
-├── docs/                  Architecture, setup and explanatory artwork
-├── scripts/               Deployment helpers
-├── firestore.rules        Cloud access rules
-└── firebase.json          Firebase project configuration
-```
+- [ארכיטקטורה](docs/architecture.md) · [תהליך הבנייה](docs/project-build-process.md)
+- [מנוע הסנכרון](web/src/sync/syncEngine.ts) · [מתאם Firebase](web/src/sync/firebaseCloudAdapter.ts)
+- [רכיב ההצפנה](web/src/core/crypto.ts) · [פונקציות השרת](functions/src/index.ts)
+- [כללי גישה](firestore.rules) · [מקור ומשמעות האיורים](docs/images/README.md)
 
-- [Architecture](docs/architecture.md): components and data flow.
-- [Project build process](docs/project-build-process.md): implementation background.
-- [Web setup](web/README.md): client configuration and commands.
-- [Firebase setup](docs/firebase/README.md): backend provisioning.
-- [Artwork notes](docs/images/README.md): what the illustrations represent.
+**רישוי:** כרגע אין קובץ רישיון. עצם האפשרות לצפות בריפו ציבורי אינה רשות אוטומטית להפיץ או להשתמש מחדש בקוד; יש לברר רישוי עם הבעלים.
 
-## Contributing & reuse
-
-Useful next steps include strengthening long-running reminders, paginated sync, date-rule parity and privacy guarantees, with tests that cover real failure conditions. Keep bug reports free of health records, sync codes and credentials; use synthetic examples.
-
-No license file is currently included. A publicly readable repository does not by itself grant permission to redistribute or reuse the code; clarify licensing with the owner first.
+</div>
