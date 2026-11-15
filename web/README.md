@@ -18,7 +18,9 @@ Web client (`React + TypeScript + Vite`) for the existing MedMinder Firebase syn
 - Anonymous Firebase Auth only.
 - Web login via callable function `loginWebWithSyncCode(syncCode)`.
 - Web logout via callable function `logoutWebSession(datasetId)`.
-- E2E encryption of medical payloads with AES-GCM.
+- AES-GCM encryption of medical payloads. This is not a verified end-to-end
+  confidentiality guarantee: the backend receives the sync code used for key
+  derivation. See the [root README security and limitations section](../README.md#status-and-important-limitations).
 - Data key derivation with HKDF SHA-256:
   - salt: `medminder-sync-salt-v1`
   - info: `medminder-sync-data-key`
